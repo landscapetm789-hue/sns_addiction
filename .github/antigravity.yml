@@ -1,0 +1,12 @@
+name:Anti-Gravity Data Update
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Run test
+        run: echo "안티그래피티 자동화 준비 완료"
