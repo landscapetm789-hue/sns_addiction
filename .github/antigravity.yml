@@ -1,12 +1,15 @@
-name:Anti-Gravity Data Update
+name: KCI API Test
 on:
   push:
     branches: [ main ]
 jobs:
-  build:
+  test_api:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Run test
-        run: echo "안티그래피티 자동화 준비 완료"
+      - name: Test KCI API
+        env:
+          KCI_KEY: ${{ secrets.KCI_API_KEY }}
+        run: echo "API 열쇠를 사용하여 테스트를 시작합니다."
+             CURL "http://open.kci.go.kr/po/openapi//openApiSearch.kci?apiCode=articleSearch&key=27630373&title=SNS"
